@@ -5,11 +5,9 @@ import { Icon } from "@/components/ui/Icon";
  * Heading and all four items are verbatim. The document supplies no
  * supporting sentence for these items, so none is invented — the section is
  * a ledger of four claims and nothing else.
- *
- * NOTE: "X سال" is a placeholder left unfilled in the source document.
  */
 const ITEMS = [
-  "بیش از X سال تجربه در تجارت الکترونیک",
+  "بیش از ۳ سال تجربه در تجارت الکترونیک",
   "پنل هوشمند مدیریت ارسال",
   "همکاری با شرکت‌های حمل‌ونقل معتبر",
   "پشتیبانی تخصصی",
