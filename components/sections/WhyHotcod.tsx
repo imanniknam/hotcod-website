@@ -1,0 +1,43 @@
+import { Icon } from "@/components/ui/Icon";
+
+/**
+ * Copy source: HODCOD-home page.pdf — «Section 02 | مزیت‌های اصلی».
+ * Heading and all four items are verbatim. The document supplies no
+ * supporting sentence for these items, so none is invented — the section is
+ * a ledger of four claims and nothing else.
+ *
+ * NOTE: "X سال" is a placeholder left unfilled in the source document.
+ */
+const ITEMS = [
+  "بیش از X سال تجربه در تجارت الکترونیک",
+  "پنل هوشمند مدیریت ارسال",
+  "همکاری با شرکت‌های حمل‌ونقل معتبر",
+  "پشتیبانی تخصصی",
+];
+
+export function WhyHotcod() {
+  return (
+    <section className="py-20 md:py-28 lg:py-32">
+      <div className="mx-auto w-full max-w-[1200px] px-5 md:px-10 lg:px-12">
+        <p className="text-overline font-mono text-content-brand">WHY HOTCOD</p>
+        <h2 className="text-h1 text-content-primary mt-4">
+          چرا <span className="bidi-isolate font-mono">HOTCOD</span>؟
+        </h2>
+
+        <ul className="border-border-subtle mt-12 border-t">
+          {ITEMS.map((item) => (
+            <li
+              key={item}
+              className="border-border-subtle flex items-center gap-5 border-b py-7"
+            >
+              <span className="bg-brand-50 text-brand-700 flex h-9 w-9 shrink-0 items-center justify-center rounded-full">
+                <Icon name="check" size={18} />
+              </span>
+              <span className="text-h3 text-content-primary">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}

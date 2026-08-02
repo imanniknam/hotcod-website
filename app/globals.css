@@ -1,0 +1,329 @@
+@import "tailwindcss";
+
+/* ============================================================================
+   HOTCOD — PRECISION IN TRANSIT
+   Token layer. Mirrors the Figma variable collections one-to-one.
+   Figma collections: Primitives / Semantic / Scale / Motion
+   Light theme only. RTL-first.
+   ========================================================================= */
+
+@theme {
+  /* ---- Font families --------------------------------------------------
+     Estedad carries headings (geometric bowls echo the wordmark).
+     Vazirmatn carries body (most legible free Persian face at 14–16px).
+     JetBrains Mono is the machine voice: tracking codes + Latin eyebrows. */
+  --font-display: var(--font-estedad), system-ui, sans-serif;
+  --font-body: var(--font-vazirmatn), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+
+  /* ---- Brand ----------------------------------------------------------
+     400 / 500 / 600 / 700 are measured off the logo file and LOCKED. */
+  --color-brand-50: #fff5ed;
+  --color-brand-100: #ffe8d4;
+  --color-brand-200: #ffcda8;
+  --color-brand-300: #feab71;
+  --color-brand-400: #fe8d1a;
+  --color-brand-500: #fe731a;
+  --color-brand-600: #fd3f13;
+  --color-brand-700: #c2410c;
+  --color-brand-800: #9a3412;
+  --color-brand-900: #7c2d12;
+
+  /* ---- Ink ------------------------------------------------------------
+     Hue 214° held through the whole ramp — no neutral gray anywhere.
+     500/600/700 are tuned so content-tertiary clears AA (4.69:1 on canvas). */
+  --color-ink-0: #ffffff;
+  --color-ink-25: #fbfcfd;
+  --color-ink-50: #f6f8fa;
+  --color-ink-100: #edf1f5;
+  --color-ink-150: #e3e9ef;
+  --color-ink-200: #d6dee7;
+  --color-ink-300: #bcc7d3;
+  --color-ink-400: #94a2b2;
+  --color-ink-500: #64717f;
+  --color-ink-600: #4c5866;
+  --color-ink-700: #374350;
+  --color-ink-800: #212a34;
+  --color-ink-900: #1d252f;
+  --color-ink-950: #141a22;
+
+  /* ---- Semantic accents -----------------------------------------------
+     Brand occupies hue 19–33°. Everything that can move is >=100° away.
+     Warning cannot leave the warm range, so it is separated by CHROMA and
+     FORM instead: it is never a saturated fill. See DESIGN-SPEC.md. */
+  --color-success-50: #e7f5f0;
+  --color-success-500: #0e7c5a;
+  --color-success-700: #0a5e44;
+  --color-warning-50: #fbf3dc;
+  --color-warning-500: #8a6508;
+  --color-warning-700: #6b4e06;
+  --color-danger-50: #fcebef;
+  --color-danger-500: #c2143f;
+  --color-danger-700: #97102f;
+  --color-info-50: #eaf2fa;
+  --color-info-500: #1b6db5;
+  --color-info-700: #145189;
+
+  /* ---- Semantic aliases ------------------------------------------------ */
+  --color-surface-canvas: var(--color-ink-50);
+  --color-surface-raised: var(--color-ink-0);
+  --color-surface-sunken: var(--color-ink-100);
+  --color-surface-inverse: var(--color-ink-900);
+
+  --color-border-subtle: var(--color-ink-150);
+  --color-border-default: var(--color-ink-200);
+  --color-border-strong: var(--color-ink-300);
+  --color-border-inverse: var(--color-ink-700);
+
+  --color-content-primary: var(--color-ink-900);
+  --color-content-secondary: var(--color-ink-600);
+  --color-content-tertiary: var(--color-ink-500);
+  --color-content-placeholder: var(--color-ink-400);
+  --color-content-inverse: var(--color-ink-0);
+  --color-content-brand: var(--color-brand-700);
+  --color-content-on-brand: var(--color-ink-900); /* 5.66:1 — the AA rule */
+
+  /* ---- Parcel status --------------------------------------------------- */
+  --color-status-registered: var(--color-ink-500);
+  --color-status-collected: var(--color-info-500);
+  --color-status-transit: var(--color-brand-600);
+  --color-status-delivered: var(--color-success-500);
+  --color-status-settled: var(--color-ink-900);
+
+  /* ---- Type scale ------------------------------------------------------
+     Persian needs air: body 1.7–1.9, headings 1.35–1.5.
+     Letter-spacing is 0 on every Persian style. Only the mono voice tracks. */
+  --text-display-1: 3.5rem;
+  --text-display-1--line-height: 4.75rem;
+  --text-display-1--font-weight: 700;
+  --text-display-2: 2.75rem;
+  --text-display-2--line-height: 3.8125rem;
+  --text-display-2--font-weight: 700;
+
+  --text-h1: 2.25rem;
+  --text-h1--line-height: 3.125rem;
+  --text-h1--font-weight: 700;
+  --text-h2: 1.75rem;
+  --text-h2--line-height: 2.5625rem;
+  --text-h2--font-weight: 700;
+  --text-h3: 1.375rem;
+  --text-h3--line-height: 2.0625rem;
+  --text-h3--font-weight: 600;
+  --text-h4: 1.125rem;
+  --text-h4--line-height: 1.75rem;
+  --text-h4--font-weight: 600;
+
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 2rem;
+  --text-body: 1rem;
+  --text-body--line-height: 1.8125rem;
+  --text-body-sm: 0.875rem;
+  --text-body-sm--line-height: 1.5625rem;
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.375rem;
+  --text-label: 0.8125rem;
+  --text-label--line-height: 1.25rem;
+  --text-label--font-weight: 500;
+
+  --text-action-lg: 1rem;
+  --text-action-lg--line-height: 1.5rem;
+  --text-action-lg--font-weight: 500;
+  --text-action: 0.9375rem;
+  --text-action--line-height: 1.375rem;
+  --text-action--font-weight: 500;
+  --text-action-sm: 0.875rem;
+  --text-action-sm--line-height: 1.25rem;
+  --text-action-sm--font-weight: 500;
+
+  /* Numerals are a first-class design element, not styled text. */
+  --text-num-xl: 2.5rem;
+  --text-num-xl--line-height: 2.875rem;
+  --text-num-xl--font-weight: 600;
+  --text-num-lg: 1.75rem;
+  --text-num-lg--line-height: 2.125rem;
+  --text-num-lg--font-weight: 600;
+  --text-num-md: 1.125rem;
+  --text-num-md--line-height: 1.5rem;
+  --text-num-md--font-weight: 600;
+  --text-num-sm: 0.875rem;
+  --text-num-sm--line-height: 1.125rem;
+  --text-num-sm--font-weight: 500;
+  --text-num-unit: 0.8125rem;
+  --text-num-unit--line-height: 1.125rem;
+
+  /* Latin-only. NEVER apply these to Persian script. */
+  --text-code: 0.9375rem;
+  --text-code--line-height: 1.3125rem;
+  --text-code--letter-spacing: 0.1em;
+  --text-code-sm: 0.75rem;
+  --text-code-sm--line-height: 1.0625rem;
+  --text-code-sm--letter-spacing: 0.08em;
+  --text-overline: 0.6875rem;
+  --text-overline--line-height: 0.9375rem;
+  --text-overline--letter-spacing: 0.14em;
+  --text-overline--font-weight: 500;
+
+  /* ---- Radius — engineered, not soft ----------------------------------- */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* ---- Elevation — low, layered, warm-tinted --------------------------- */
+  --shadow-e1: 0 1px 2px rgb(29 37 47 / 0.06), 0 1px 3px rgb(29 37 47 / 0.05);
+  --shadow-e2: 0 2px 4px rgb(29 37 47 / 0.04), 0 8px 16px -4px rgb(29 37 47 / 0.08);
+  --shadow-e3: 0 4px 8px rgb(29 37 47 / 0.04), 0 24px 40px -12px rgb(194 65 12 / 0.12);
+  --shadow-focus: 0 0 0 3px rgb(254 115 26 / 0.32);
+
+  /* ---- Motion ---------------------------------------------------------- */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-enter: cubic-bezier(0, 0, 0.2, 1);
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+  --ease-transit: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ---- Breakpoints — 390 is the base, not a breakpoint ------------------ */
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1440px;
+
+  /* ---- Brand geometry --------------------------------------------------
+     The logo's italic shear and its three trailing speed lines are brand
+     assets, not ornaments. The angle is 12° and it never changes. */
+  --shear-angle: 12deg;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-surface-canvas);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--color-content-primary);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    /* Persian must never be italicised or letter-spaced. */
+    font-style: normal;
+    letter-spacing: 0;
+  }
+
+  /* Every figure in this product is compared against another figure. */
+  :where(table, [data-numeric]) {
+    font-variant-numeric: tabular-nums;
+  }
+
+  ::selection {
+    background-color: var(--color-brand-200);
+    color: var(--color-ink-900);
+  }
+
+  :focus-visible {
+    outline: none;
+    box-shadow: var(--shadow-focus);
+    border-radius: var(--radius-xs);
+  }
+}
+
+@utility tnum {
+  /* Tabular figures — required on anything in a comparison column. */
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+@utility bidi-isolate {
+  /* Latin runs inside Persian sentences. Without isolation, trailing
+     punctuation and digits drift to the wrong end of the line. */
+  unicode-bidi: isolate;
+  direction: ltr;
+  display: inline-block;
+}
+
+@utility perforation {
+  /* The waybill grid — perforation rule used as a section separator.
+     Maximum three appearances on the homepage. */
+  background-image: repeating-linear-gradient(
+    to left,
+    var(--color-border-default) 0 6px,
+    transparent 6px 12px
+  );
+  block-size: 1px;
+}
+
+@utility shear {
+  /* The locked 12° shear. Applied to speed lines and rail terminals only —
+     NEVER to text, because Persian must not be sheared. */
+  transform: skewX(calc(-1 * var(--shear-angle)));
+}
+
+@layer components {
+  /* Corner registration marks. Only on cards that carry an argument. */
+  .reg-marks {
+    position: relative;
+  }
+  .reg-marks::before,
+  .reg-marks::after {
+    content: "";
+    position: absolute;
+    inline-size: 14px;
+    block-size: 14px;
+    border-color: var(--color-border-strong);
+    pointer-events: none;
+  }
+  .reg-marks::before {
+    inset-block-start: 10px;
+    inset-inline-start: 10px;
+    border-inline-start: 1px solid;
+    border-block-start: 1px solid;
+  }
+  .reg-marks::after {
+    inset-block-end: 10px;
+    inset-inline-end: 10px;
+    border-inline-end: 1px solid;
+    border-block-end: 1px solid;
+  }
+}
+
+/* ---- The one orchestrated moment ----------------------------------------
+   The parcel traverses the rail once on mount. `both` fill-mode means that
+   when prefers-reduced-motion collapses the duration to ~0, the rail still
+   lands on its correct final state instead of snapping back to empty. */
+@keyframes rail-travel {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--rail-progress, 0%);
+  }
+}
+
+@keyframes rail-node-arrive {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* The whole system has exactly one orchestrated moment. Under
+   prefers-reduced-motion the parcel simply appears at its final node. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
