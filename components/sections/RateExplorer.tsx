@@ -187,8 +187,8 @@ export function RateExplorer() {
               </p>
 
               <div className="mt-10">
-                <Button href="/signup" size="lg">
-                  ثبت‌نام
+                <Button href="https://shop.hotcod.ir" size="lg">
+                  ورود
                 </Button>
               </div>
             </>

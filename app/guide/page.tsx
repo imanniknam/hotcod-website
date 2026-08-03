@@ -87,8 +87,8 @@ export default function GuidePage() {
           </dl>
 
           <div className="mt-14">
-            <Button href="/signup" size="lg">
-              ثبت‌نام
+            <Button href="https://shop.hotcod.ir" size="lg">
+              ورود
             </Button>
           </div>
         </div>

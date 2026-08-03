@@ -77,8 +77,8 @@ export default function ServicesPage() {
           </ul>
 
           <div className="mt-14 flex flex-col gap-3 sm:flex-row">
-            <Button href="/signup" size="lg">
-              ثبت‌نام
+            <Button href="https://shop.hotcod.ir" size="lg">
+              ورود
             </Button>
             <Button href="/contact" variant="secondary" size="lg">
               تماس با ما

@@ -47,8 +47,8 @@ export function GetStarted() {
         </ol>
 
         <div className="mt-12">
-          <Button href="/signup" size="lg">
-            ثبت‌نام
+          <Button href="https://shop.hotcod.ir" size="lg">
+            ورود
           </Button>
         </div>
       </div>

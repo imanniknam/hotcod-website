@@ -34,8 +34,8 @@ export function Hero() {
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button href="/signup" size="lg">
-                ثبت‌نام
+              <Button href="https://shop.hotcod.ir" size="lg">
+                ورود
               </Button>
               <Button
                 href="/tracking"
@@ -56,7 +56,7 @@ export function Hero() {
               width={1024}
               height={1024}
               priority
-              className="h-auto w-full max-w-[440px]"
+              className="h-auto w-full max-w-[240px] sm:max-w-[300px] md:max-w-[360px] lg:max-w-[440px]"
             />
           </div>
         </div>
