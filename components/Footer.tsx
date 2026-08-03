@@ -97,11 +97,11 @@ export function Footer() {
 
         <div className="border-border-subtle mt-14 flex flex-col gap-3 border-t pt-6 md:flex-row md:items-center md:justify-between">
           <p className="text-caption text-content-tertiary tnum">
-            شرکت هات‌کد · شماره ثبت {toPersianDigits("۵۸۴۹۲۱")} · شناسه ملی{" "}
-            {toPersianDigits("۱۴۰۱۰۹۸۷۶۵۴")}
+            شرکت <span className="bidi-isolate font-mono">HOTCOD</span>
           </p>
           <p className="text-caption text-content-tertiary tnum">
-            © {toPersianDigits("۱۴۰۵")} هات‌کد. همه حقوق محفوظ است.
+            © {toPersianDigits("۱۴۰۵")} <span className="bidi-isolate font-mono">HOTCOD</span>. همه حقوق محفوظ
+            است.
           </p>
         </div>
       </div>

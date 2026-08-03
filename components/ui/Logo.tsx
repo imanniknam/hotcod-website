@@ -57,7 +57,7 @@ export function Logo({ variant = "full", theme = "light", className }: LogoProps
 
   if (variant === "mark") {
     return (
-      <span className={["inline-flex", className].filter(Boolean).join(" ")} role="img" aria-label="هات‌کد">
+      <span className={["inline-flex", className].filter(Boolean).join(" ")} role="img" aria-label="HOTCOD">
         <Mark id={id} className="h-full w-auto" />
       </span>
     );
@@ -67,7 +67,7 @@ export function Logo({ variant = "full", theme = "light", className }: LogoProps
     <span
       className={["inline-flex items-center gap-2", className].filter(Boolean).join(" ")}
       role="img"
-      aria-label="هات‌کد"
+      aria-label="HOTCOD"
     >
       <Mark id={id} className="h-full w-auto" />
       <span className="flex flex-col justify-center gap-[0.15em]">

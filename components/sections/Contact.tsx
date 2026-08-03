@@ -8,9 +8,9 @@ import { Icon, type IconName } from "@/components/ui/Icon";
 import { toPersianDigits } from "@/lib/format";
 
 const DETAILS: { icon: IconName; label: string; value: string; href?: string }[] = [
-  { icon: "phone", label: "تلفن پشتیبانی", value: toPersianDigits("021-91020304"), href: "tel:+982191020304" },
+  { icon: "phone", label: "تلفن پشتیبانی", value: toPersianDigits("021-45405"), href: "tel:+982145405" },
   { icon: "mail", label: "ایمیل", value: "hello@hotcod.ir", href: "mailto:hello@hotcod.ir" },
-  { icon: "map-pin", label: "دفتر مرکزی", value: "تهران، خیابان مطهری، پلاک ۱۴۲" },
+  { icon: "map-pin", label: "دفتر مرکزی", value: "تهران، یوسف‌آباد، خیابان اسدآبادی، کوچه اول، پلاک ۲" },
 ];
 
 const SOCIAL: { icon: IconName; label: string; href: string }[] = [
@@ -32,8 +32,7 @@ export function Contact() {
             <p className="text-overline font-mono text-content-brand">CONTACT</p>
             {/* Copy source: HODCOD-home page.pdf — «Section 08 | تماس با ما».
                 The document specifies three displays here: فرم تماس،
-                اطلاعات تماس، شبکه‌های اجتماعی. Contact details below are
-                placeholders — the document supplies no real ones. */}
+                اطلاعات تماس، شبکه‌های اجتماعی. */}
             <h2 className="text-h1 text-content-primary mt-4">با ما در ارتباط باشید.</h2>
 
             {sent ? (

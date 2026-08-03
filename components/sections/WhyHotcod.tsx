@@ -1,4 +1,5 @@
 import { Icon } from "@/components/ui/Icon";
+import { RateCalculator } from "@/components/sections/RateCalculator";
 
 /**
  * Copy source: HODCOD-home page.pdf — «Section 02 | مزیت‌های اصلی».
@@ -22,19 +23,25 @@ export function WhyHotcod() {
           چرا <span className="bidi-isolate font-mono">HOTCOD</span>؟
         </h2>
 
-        <ul className="border-border-subtle mt-12 border-t">
-          {ITEMS.map((item) => (
-            <li
-              key={item}
-              className="border-border-subtle flex items-center gap-5 border-b py-7"
-            >
-              <span className="bg-brand-50 text-brand-700 flex h-9 w-9 shrink-0 items-center justify-center rounded-full">
-                <Icon name="check" size={18} />
-              </span>
-              <span className="text-h3 text-content-primary">{item}</span>
-            </li>
-          ))}
-        </ul>
+        <div className="mt-12 grid items-start gap-10 lg:grid-cols-12 lg:gap-12">
+          <ul className="border-border-subtle border-t lg:col-span-7">
+            {ITEMS.map((item) => (
+              <li
+                key={item}
+                className="border-border-subtle flex items-center gap-5 border-b py-7"
+              >
+                <span className="bg-brand-50 text-brand-700 flex h-9 w-9 shrink-0 items-center justify-center rounded-full">
+                  <Icon name="check" size={18} />
+                </span>
+                <span className="text-h3 text-content-primary">{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="lg:col-span-5">
+            <RateCalculator />
+          </div>
+        </div>
       </div>
     </section>
   );

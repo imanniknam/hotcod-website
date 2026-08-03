@@ -1,7 +1,7 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { TrackingRail } from "@/components/TrackingRail";
-import { RateCalculator } from "@/components/sections/RateCalculator";
 import { CANONICAL_STAGES } from "@/lib/types";
 
 /**
@@ -26,7 +26,7 @@ export function Hero() {
             <h1 className="text-h1 md:text-display-2 text-content-primary mt-4 text-balance">
               تمام فرآیند ارسال فروشگاهت رو از یک پنل مدیریت کن.
             </h1>
-            <p className="text-body text-content-secondary mt-5 max-w-[62ch]">
+            <p className="text-body text-content-secondary mt-5 max-w-[62ch] text-justify">
               <span className="bidi-isolate font-mono font-medium">HOTCOD</span> یک پلتفرم
               هوشمند مدیریت لجستیک است که به فروشگاه‌های اینترنتی کمک می‌کند سفارش‌هایشان را
               سریع‌تر، ارزان‌تر و با کنترل کامل ارسال کنند؛ از مقایسه آنلاین هزینه ارسال و ثبت
@@ -48,9 +48,16 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Left column — the conversion tool, visible without scrolling. */}
-          <div className="lg:col-span-6">
-            <RateCalculator />
+          {/* Left column — the cash-on-delivery visual, visible without scrolling. */}
+          <div className="flex items-center justify-center lg:col-span-6">
+            <Image
+              src="/cash-on-delivery.png"
+              alt="پرداخت پس‌کرایه هات‌کد"
+              width={1024}
+              height={1024}
+              priority
+              className="h-auto w-full max-w-[440px]"
+            />
           </div>
         </div>
       </div>
