@@ -66,12 +66,9 @@ export function Header() {
           </ul>
         </nav>
 
-        {/* «ثبت‌نام» is the header's primary CTA; «ورود» links out to the merchant dashboard on shop.hotcod.ir. */}
+        {/* «ورود» is the header's primary CTA — it links out to the merchant dashboard on shop.hotcod.ir. */}
         <div className="ms-auto hidden items-center gap-2 xl:flex">
-          <Button href="/signup" size="sm">
-            ثبت‌نام
-          </Button>
-          <Button href="https://shop.hotcod.ir" variant="ghost" size="sm">
+          <Button href="https://shop.hotcod.ir" size="sm">
             ورود
           </Button>
           <Button href="/tracking" variant="secondary" size="sm">
@@ -113,10 +110,7 @@ export function Header() {
               ))}
             </ul>
             <div className="mt-8 flex flex-col gap-3">
-              <Button href="/signup" size="lg" className="w-full">
-                ثبت‌نام
-              </Button>
-              <Button href="https://shop.hotcod.ir" variant="ghost" size="lg" className="w-full">
+              <Button href="https://shop.hotcod.ir" size="lg" className="w-full">
                 ورود
               </Button>
               <Button href="/tracking" variant="secondary" size="lg" className="w-full">
